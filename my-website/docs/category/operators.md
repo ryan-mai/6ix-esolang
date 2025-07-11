@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Operators
@@ -51,7 +51,7 @@ The <span style={{color: 'aquamarine'}}>**nize**</span> operator returns the rem
 9
 ```
 
-The <span style={{color: 'aquamarine'}}>**mans**</span> operator raise the first number by the second (`**`). <br /><br />
+The <span style={{color: 'aquamarine'}}>**mans**</span> operator raise the first number to the power of the second (`**`). <br /><br />
 
 #### Floor Division
 ```
@@ -137,3 +137,89 @@ allow it hello
 >>> 2
 ```
 The <span style={{color: 'aquamarine'}}>**bucktee**</span> operator decreases a variable by a value (`//=`). <br /><br />
+
+### Comparison Operators
+#### Equal To
+```
+real sh 5 word 5
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**word**</span> operator returns a Boolean by comparing two similar values (`==`). <br /><br />
+
+#### Not Equal To
+```
+real sh 5 fam 4
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**fam**</span> operator returns a Boolean comparing two unlike values (`!=`). <br /><br />
+
+#### Less Than
+```
+real sh 2 wallahi 3
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**wallahi**</span> operator returns a Boolean if the first value is less than the second (`<`). <br /><br />
+
+#### Less Than or Equal To
+```
+real sh 4 reach 4
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**reach**</span> operator returns a Boolean if the first value is less than or equal to the second (`<=`). <br /><br />
+
+#### Greater Than
+```
+real sh 7 bussin 2
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**bussin**</span> operator returns a Boolean if the first value is greater than the second (`>`). <br /><br />
+
+#### Greater Than or Equal To
+```
+real sh 8 lick 8
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**lick**</span> operator returns a Boolean if the first value is greater than or equal to the second (`>=`). <br /><br />
+
+### Logical Operators
+#### And
+```
+real sh 1 based 0
+>>> False
+```
+The <span style={{color: 'aquamarine'}}>**based**</span> operator returns True if both values are truthy (`and`). <br /><br />
+
+#### Or
+```
+real sh 1 ratio 0
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**ratio**</span> operator returns True if at least one value is truthy (`or`). <br /><br />
+
+#### Not
+```
+real sh mid 0
+>>> True
+real sh mid 1
+>>> False
+```
+The <span style={{color: 'aquamarine'}}>**mid**</span> operator returns the logical negation of a value (`not`). <br /><br />
+
+### Identity Operators
+#### Is
+```
+croski a 5
+croski b 5
+real sh a like b
+>>> False
+```
+The <span style={{color: 'aquamarine'}}>**like**</span> operator checks if two variables are the same object (`is`). <br /><br />
+
+#### Is Not
+```
+croski a 5
+croski b 5
+real sh a aint b
+>>> True
+```
+The <span style={{color: 'aquamarine'}}>**aint**</span> operator checks if two variables are not the same object (`is not`). <br /><br />
