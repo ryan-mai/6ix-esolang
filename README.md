@@ -1,6 +1,9 @@
-# VarLang Interpreter
+# 6ix Esolang Interpreter
 
-A modular Python interpreter for the VarLang programming language with authentic slang syntax.
+[Official Documentation](https://ryan-mai.github.io/6ix-esolang/)
+[Official Interpreter](https://sixix-esolang.onrender.com/)
+
+A modular Python interpreter for the 6ix Esolang based in Toronto.
 
 ## Project Structure
 
@@ -26,7 +29,7 @@ python main.py
 ```
 
 ### File Mode
-Run a VarLang file:
+Run a 6ix Esolang file:
 ```bash
 python main.py your_file.six
 ```
@@ -63,7 +66,7 @@ python main.py your_file.six
 - Error handlers storage
 
 ### handlers.py
-- Command handlers for all VarLang operations:
+- Command handlers for all 6ix Esolang operations:
   - Variable assignment (`croski`)
   - Print statements (`allow it`)
   - Comparisons (`real sh`)
@@ -81,7 +84,7 @@ python main.py your_file.six
 - Expression evaluation
 - String interpolation support
 
-## VarLang Syntax Examples
+## 6ix Esolang Syntax Examples
 
 ```varlang
 # Variable assignment
@@ -135,39 +138,39 @@ waste math "Division by zero"
 ## Error Handling
 
 The interpreter provides comprehensive error handling with custom error types:
-- `math`: Math operation errors
-- `variable`: Variable-related errors  
-- `function`: Function-related errors
-- `generic`: General errors
+- `math`: Math operation errors 👨‍🔬
+- `variable`: Variable-related errors ❓
+- `function`: Function-related errors 🎊
+- `generic`: General errors 🧬
 
 ## Slang Syntax Reference
 
 ### Variables
-- `croski var_name fax value` - Basic assignment
-- `croski var_name money up value` - Add to existing variable
-- `croski var_name funny up value` - Subtract from existing variable
-- `croski var_name cheesed value` - Multiply with existing variable
-- `croski var_name mandem value` - Divide existing variable
-- `croski var_name steeze value` - Modulo with existing variable
-- `croski var_name dun value` - Power with existing variable
-- `croski var_name bucktee value` - Floor division with existing variable
+- `croski var_name fax value` - Basic assignment (`=`)
+- `croski var_name money up value` - Add to existing variable (`+=`)
+- `croski var_name funny up value` - Subtract from existing variable (`-=`)
+- `croski var_name cheesed value` - Multiply with existing variable (`*=`)
+- `croski var_name mandem value` - Divide existing variable (`/=`)
+- `croski var_name steeze value` - Modulo with existing variable (`%=`)
+- `croski var_name dun value` - Power with existing variable (`**=`)
+- `croski var_name bucktee value` - Floor division with existing variable (`//=`)
 
 ### Math Operations
-- `addy` - Addition
-- `chopped` - Subtraction  
-- `hella` - Multiplication
-- `yute` - Division
-- `nize` - Modulo
-- `mans` - Power
-- `two-twos` - Floor division
+- `addy` - Addition (`+`)
+- `chopped` - Subtraction (`-`)
+- `hella` - Multiplication (`*`)
+- `yute` - Division (`/`)
+- `nize` - Modulo (`%`)
+- `mans` - Power (`**`)
+- `two-twos` - Floor division (`//`)
 
 ### Comparisons
-- `word` - Equal to
-- `fam` - Not equal to
-- `wallahi` - Less than
-- `reach` - Less than or equal to
-- `bussin` - Greater than
-- `lick` - Greater than or equal to
+- `word` - Equal to (`==`)
+- `fam` - Not equal to (`!=`)
+- `wallahi` - Less than (`>`)
+- `reach` - Less than or equal to (`>=`)
+- `bussin` - Greater than (`<`)
+- `lick` - Greater than or equal to (`<=`)
 
 ### Logical Operations
 - `based` - AND
