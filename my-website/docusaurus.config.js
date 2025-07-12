@@ -93,8 +93,11 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/playground', label: 'Playground', position: 'left'}, // <-- add this line
+          {
+            href: 'https://sixix-esolang.onrender.com/',
+            label: 'Playground',
+            position: 'left',
+          },
           {
             href: 'https://github.com/ryan-mai/6ix-esolang',
             label: 'GitHub',
@@ -104,26 +107,6 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs/category/index',
-              },
-            ],
-          },
-          {
-            title: 'Contact',
-            items: [
-              {
-                label: 'Github',
-                href: 'https://github.com/ryan-mai',
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Ryan M's. Built with 💕.`,
       },
       prism: {

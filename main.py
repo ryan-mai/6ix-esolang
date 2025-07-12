@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 VarLang Interpreter - Main Entry Point
+
+Now expects source files with the .six extension.
 """
 
 import sys
@@ -10,8 +12,11 @@ def main():
     """Main entry point for the VarLang interpreter"""
     
     if len(sys.argv) > 1:
-        # Run from file
+        # Run from .six file
         filename = sys.argv[1]
+        if not filename.endswith('.six'):
+            print("ERROR: Please provide a .six file")
+            sys.exit(1)
         try:
             with open(filename, 'r', encoding='utf-8') as file:
                 code = file.read()
@@ -43,4 +48,4 @@ def main():
                 break
 
 if __name__ == "__main__":
-    main() 
+    main()
