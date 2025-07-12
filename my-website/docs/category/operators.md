@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # Operators
 
+#### No bizzy bap this gon check if you cappin 🧢
+
 ### Artihematic Operators
 
 #### Addition

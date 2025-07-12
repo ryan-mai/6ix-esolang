@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slang Playground</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ifm-color-primary: #2e8555;
+            --ifm-color-primary-dark: #29784c;
+            --ifm-color-primary-light: #33925d;
+            --ifm-background: #fff;
+            --ifm-font-family-base: 'Roboto', Arial, sans-serif;
+        }
+        body {
+            background: var(--ifm-background);
+            font-family: var(--ifm-font-family-base);
+            margin: 0;
+            padding: 0;
+        }
+        .heroBanner {
+            background: var(--ifm-color-primary);
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 2rem 2rem 2.5rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e0ffe0;
+            margin-bottom: 2rem;
+        }
+        textarea {
+            width: 100%;
+            height: 180px;
+            font-size: 1.1rem;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #f8fafc;
+            resize: vertical;
+            box-sizing: border-box;
+            transition: border 0.2s;
+        }
+        textarea:focus {
+            border: 1.5px solid var(--ifm-color-primary);
+            outline: none;
+        }
+        .button {
+            background: var(--ifm-color-primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.7rem 2.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 1rem;
+        }
+        .button:hover {
+            background: var(--ifm-color-primary-dark);
+        }
+        #output {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 2.5em;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+            color: #222;
+            margin-top: 1rem;
+            white-space: pre-wrap;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+            .heroBanner {
+                padding: 2rem 0 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heroBanner">
+        <h1>Slang Playground</h1>
+        <div class="subtitle">Try out your 6ix Esolang code below!</div>
+    </div>
+    <div class="container">
+        <textarea id="code" placeholder="Type your code here..."></textarea>
+        <br>
+        <button class="button" onclick="runCode()">Run</button>
+        <div id="output"></div>
+    </div>
+    <script>
+        function runCode() {
+            const code = document.getElementById('code').value;
+            fetch('/run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ code })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('output').textContent = data.output;
+                } else {
+                    document.getElementById('output').textContent = "Error: " + data.error;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

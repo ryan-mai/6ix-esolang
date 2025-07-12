@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Functions
 
-This page explains how to define and use functions in the 6ix Esolang interpreter.
+Defining and using functions to get invited to Drake's party 👯‍♂️
 
 ## Defining a Function
 
