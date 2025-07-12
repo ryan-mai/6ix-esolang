@@ -1,0 +1,41 @@
+# Test file for VarLang interpreter with slang syntax
+# This file tests basic functionality
+
+# Variable assignment
+croski x fax 10
+croski y fax 20
+
+# Print variables
+allow it x
+allow it y
+
+# Arithmetic operations
+croski sum x addy y
+allow it sum
+
+croski product x hella y
+allow it product
+
+# Comparisons
+real sh x wallahi y
+real sh x bussin y
+
+# Function definition
+mans add_numbers takes a b does
+    croski result a addy b
+    send result
+bet
+
+# Function call
+ahlie add_numbers 5 15
+
+# Try-catch block
+trust
+    croski z fax 0
+    croski result x yute z
+    allow it result
+nah
+    allow it "Caught error:"
+    allow it error_message
+    allow it error_type
+safe 
