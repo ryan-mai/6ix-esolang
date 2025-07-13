@@ -33,29 +33,24 @@ IDENTITY_OPERATIONS = {
 }
 
 class VarLangError(Exception):
-    """Base exception class for VarLang errors"""
     def __init__(self, message, error_type="generic"):
         self.message = message
         self.error_type = error_type
         super().__init__(self.message)
 
 class VarLangMathError(VarLangError):
-    """Math operation errors"""
     def __init__(self, message):
         super().__init__(message, "math")
 
 class VarLangVariableError(VarLangError):
-    """Variable-related errors"""
     def __init__(self, message):
         super().__init__(message, "variable")
 
 class VarLangFunctionError(VarLangError):
-    """Function-related errors"""
     def __init__(self, message):
         super().__init__(message, "function")
 
 def throw_error(message, error_type="generic"):
-    """Throw a VarLang error"""
     if error_type == "math":
         raise VarLangMathError(message)
     elif error_type == "variable":
@@ -66,7 +61,6 @@ def throw_error(message, error_type="generic"):
         raise VarLangError(message, error_type)
 
 def parse_value(value):
-    """Parse a value string into the appropriate type"""
     if isinstance(value, (int, float)):
         return value
     if str(value).isdigit():
@@ -372,13 +366,13 @@ def handle_variable(tokens):
                 if parsed_val is not None:
                     variables[var_name] = parsed_val
                 else:
-                    throw_error(f"Invalid value: {value}", "variable")
+                    throw_error(f"Invalid value croski: {value}", "variable")
         else:
-            throw_error("Invalid variable syntax", "variable")
+            throw_error("Bizzy bap variable syntax", "variable")
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
-        throw_error(f"Variable operation failed: {e}", "variable")
+        throw_error(f"Bombarasclat variable don't work man: {e}", "variable")
 
 def handle_print(tokens):
     try:
@@ -398,11 +392,11 @@ def handle_print(tokens):
                 val = parse_value(var_name)
 
                 if var_name in functions:
-                    throw_error(f"Cannot print function: {var_name}", "generic")
+                    throw_error(f"Cannot allow it broski: {var_name}", "generic")
                 else:
                     print(val)
             except Exception:
-                throw_error(f"Unknown variable: {var_name}", "variable")
+                throw_error(f"Huh twin what variable you yappin about: {var_name}", "variable")
 
         elif len(tokens) == 5 and tokens[1] == "it" and tokens[3] in MATH_OPERATIONS:
             left = tokens[2]
@@ -429,11 +423,11 @@ def handle_print(tokens):
                 else:
                     print(' '.join(tokens[2:]))
             else:
-                throw_error("Invalid print syntax", "generic")
+                throw_error("Invalid allow it talk", "generic")
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
-        throw_error(f"Print operation failed: {e}", "generic")
+        throw_error(f"We no allow it: {e}", "generic")
 
 def handle_operators(tokens):
     try:
@@ -569,47 +563,52 @@ def handle_throw(tokens):
 
 def handle_try_catch(lines, start_index):
     """Handle try-catch blocks: 'trust' ... 'nah' ... 'safe'"""
-    try_body = []
-    catch_body = []
-    current_section = "try"
-    i = start_index + 1
-
-    while i < len(lines):
-        line = lines[i].strip()
-        if not line or line.startswith('#'):
-            i += 1
-            continue
-
-        tokens = line.split()
-        if not tokens:
-            i += 1
-            continue
-
-        if tokens[0] == "nah":
-            current_section = "catch"
-            i += 1
-            continue
-        elif tokens[0] == "safe":
-            break
-
-        if current_section == "try":
-            try_body.append(line)
-        elif current_section == "catch":
-            catch_body.append(line)
-
-        i += 1
-
     try:
-        for line in try_body:
-            execute_line(line)
-    except VarLangError as e:
+        try_body = []
+        catch_body = []
+        current_section = "try"
+        i = start_index + 1
 
-        variables['error_message'] = e.message
-        variables['error_type'] = e.error_type
-        for line in catch_body:
-            execute_line(line)
+        while i < len(lines):
+            line = lines[i].strip()
+            if not line or line.startswith('#'):
+                i += 1
+                continue
 
-    return i
+            tokens = line.split()
+            if not tokens:
+                i += 1
+                continue
+
+            if tokens[0] == "nah":
+                current_section = "catch"
+                i += 1
+                continue
+            elif tokens[0] == "safe":
+                break
+
+            if current_section == "try":
+                try_body.append(line)
+            elif current_section == "catch":
+                catch_body.append(line)
+
+            i += 1
+
+        try:
+            for line in try_body:
+                execute_line(line)
+        except VarLangError as e:
+
+            variables['error_message'] = e.message
+            variables['error_type'] = e.error_type
+            for line in catch_body:
+                execute_line(line)
+
+        return i
+    except Exception as e:
+        if isinstance(e, VarLangError):
+            raise
+        throw_error(f"Try-catch handling failed: {e}", "generic")
 
 def execute_line(line):
     """Execute a single line of code"""
@@ -641,6 +640,76 @@ def execute_line(line):
     elif cmd == "waste":
         handle_throw(tokens)
 
+# --- LOOP SUPPORT ---
+def handle_spinna_dunno(lines, start_index):
+    body = []
+    i = start_index + 1
+
+    while i < len(lines):
+        line = lines[i].strip()
+        if not line or line.startswith('#'):
+            i += 1
+            continue
+        if line.startswith('dunno '):
+            condition_line = line[6:].strip()
+            i += 1
+            break
+        body.append(line)
+        i += 1
+    else:
+        raise VarLangError("Croski croski croski bro where da 'gerbert' ting at", "loop")
+
+    safe_found = False
+    safe_index = i
+    while safe_index < len(lines):
+        if lines[safe_index].strip() == 'safe':
+            safe_found = True
+            break
+        safe_index += 1
+    if not safe_found:
+        raise VarLangError("Ahlie two two my word fam 'safe' end", "loop")
+
+    # Loop execution
+    while True:
+        for loop_line in body:
+            execute_line(loop_line)
+        # Evaluate condition
+        cond_tokens = condition_line.split()
+        
+        if len(cond_tokens) == 4 and cond_tokens[0] == 'real' and cond_tokens[2] == 'mid':
+            # Logical not
+            value = cond_tokens[3]
+            val = variables[value] if value in variables else parse_value(value)
+            if LOGICAL_OPERATIONS['mid'](val):
+                break
+        elif len(cond_tokens) == 5 and cond_tokens[0] == 'real' and cond_tokens[3] in COMPARISON_OPERATIONS:
+            left = cond_tokens[2]
+            op = cond_tokens[3]
+            right = cond_tokens[4]
+            left_val = variables[left] if left in variables else parse_value(left)
+            right_val = variables[right] if right in variables else parse_value(right)
+            result = COMPARISON_OPERATIONS[op](left_val, right_val)
+            if result:
+                break
+        elif len(cond_tokens) == 5 and cond_tokens[0] == 'real' and cond_tokens[3] in LOGICAL_OPERATIONS and cond_tokens[3] != 'mid':
+            left = cond_tokens[2]
+            op = cond_tokens[3]
+            right = cond_tokens[4]
+            left_val = variables[left] if left in variables else parse_value(left)
+            right_val = variables[right] if right in variables else parse_value(right)
+            result = LOGICAL_OPERATIONS[op](left_val, right_val)
+            if result:
+                break
+        else:
+            # Fallback: try to parse as boolean
+            val = parse_value(condition_line)
+            if val:
+                break
+
+    return safe_index
+
+# Update run_varlang to use spinna/dunno
+
 def run_varlang(code):
     lines = code.strip().split('\n')
     current_function = None
@@ -658,6 +727,11 @@ def run_varlang(code):
             continue
 
         cmd = tokens[0]
+
+        if cmd == "spinna":
+            i = handle_spinna_dunno(lines, i)
+            i += 1
+            continue
 
         if cmd == "trust":
             i = handle_try_catch(lines, i)
@@ -720,8 +794,21 @@ nah
     allow it error_message
     allow it error_type
 safe
+
+croski x fax 5
+spinna
+    croski x fax x chopped 1
+    allow it x
+dunno real x wallahi 0
+safe
 """
 
 if __name__ == "__main__":
-    print("=== VarLang Error Handling Demo ===")
-    run_varlang(test_error_handling)
+    import sys
+    if len(sys.argv) > 1:
+        with open(sys.argv[1], encoding="utf-8") as f:
+            code = f.read()
+        run_varlang(code)
+    else:
+        print("=== VarLang Error Handling Demo ===")
+        run_varlang(test_error_handling)

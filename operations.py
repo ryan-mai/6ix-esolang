@@ -2,7 +2,6 @@
 VarLang Operations and Operators
 """
 
-# Math operations with lambda functions
 MATH_OPERATIONS = {
     "addy": lambda x, y: x + y,      
     "chopped": lambda x, y: x - y,   
@@ -13,7 +12,6 @@ MATH_OPERATIONS = {
     "two-twos": lambda x, y: x // y  
 }
 
-# Comparison operations with lambda functions
 COMPARISON_OPERATIONS = {
     "word": lambda x, y: x == y,
     "fam": lambda x, y: x != y,
@@ -23,14 +21,12 @@ COMPARISON_OPERATIONS = {
     "lick": lambda x, y: x >= y,
 }
 
-# Logical operations with lambda functions
 LOGICAL_OPERATIONS = {
     "based": lambda x, y: bool(x) and bool(y),
     "ratio": lambda x, y: bool(x) or bool(y),
     "mid": lambda x: not bool(x),
 }
 
-# Identity operations with lambda functions
 IDENTITY_OPERATIONS = {
     "like": lambda x, y: x is y,
     "aint": lambda x, y: x is not y,

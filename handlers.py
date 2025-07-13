@@ -239,11 +239,11 @@ def handle_variable(tokens):
                 else:
                     throw_error(f"Invalid value: {value}", "variable")
         else:
-            throw_error("Invalid variable syntax", "variable")
+            throw_error("Croski dont know what variable he saying", "variable")
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
-        throw_error(f"Variable operation failed: {e}", "variable")
+        throw_error(f"Variable sh failed: {e}", "variable")
 
 def handle_print(tokens):
     try:
@@ -261,7 +261,7 @@ def handle_print(tokens):
             try:
                 val = parse_value(var_name)
                 if var_name in functions:
-                    throw_error(f"Cannot print function: {var_name}", "generic")
+                    throw_error(f"Strugglin to allow it fam: {var_name}", "generic")
                 else:
                     print(val)
             except Exception:
@@ -274,7 +274,7 @@ def handle_print(tokens):
             left_val = variables[left] if left in variables else parse_value(left)
             right_val = variables[right] if right in variables else parse_value(right)
             if left_val is None or right_val is None:
-                throw_error(f"Invalid print expression: {left} {op} {right}", "generic")
+                throw_error(f"Bro allow it saying wrong sh: {left} {op} {right}", "generic")
             if op == "addy":
                 if isinstance(left_val, str) or isinstance(right_val, str):
                     print(str(left_val) + str(right_val))
@@ -289,22 +289,22 @@ def handle_print(tokens):
                 else:
                     print(' '.join(tokens[2:]))
             else:
-                throw_error("Invalid print syntax", "generic")
+                throw_error("Bro not from here like allow it fam", "generic")
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
-        throw_error(f"Print operation failed: {e}", "generic")
+        throw_error(f"Nah allow it failed: {e}", "generic")
 
 def handle_operators(tokens):
     try:
         if len(tokens) != 5 or tokens[1] != "sh":
-            throw_error(f"Invalid operator syntax, expected 5 tokens, got {len(tokens)}", "generic")
+            throw_error(f"Two two my word fam operator, expected 5 sh, got {len(tokens)}", "generic")
 
         def is_number(s):
             return s.isdigit() or s.replace('.', '', 1).isdigit()
 
         if not (is_number(tokens[2]) and is_number(tokens[4])):
-            throw_error("Operator requires numeric operands", "math")
+            throw_error("Operator requires yo digits not yo funny up", "math")
 
         if '.' in tokens[2]:
             value_1 = float(tokens[2])
@@ -322,16 +322,15 @@ def handle_operators(tokens):
             result = MATH_OPERATIONS[operator](value_1, value_2)
             print(result)
         else:
-            throw_error(f"Unknown operator: {operator}", "math")
+            throw_error(f"Bro aint no operator: {operator}", "math")
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
         throw_error(f"Operator failed: {e}", "math")
 
 def handle_throw(tokens):
-    """Handle throwing errors: 'waste <message>' or 'waste <error_type> <message>'"""
     if len(tokens) < 2:
-        throw_error("Throw statement missing message", "generic")
+        throw_error("Gyatt statement missin message", "generic")
 
     if len(tokens) == 2:
         message = parse_value(tokens[1])

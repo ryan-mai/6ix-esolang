@@ -7,10 +7,9 @@ from state import variables, functions
 from utils import parse_value
 
 def handle_function_definition(tokens):
-    """Handle function definition: 'mans <name> takes <param1> <param2> ... does' followed by function body"""
     try:
         if len(tokens) < 5 or tokens[2] != "takes":
-            throw_error("Invalid function syntax: 'mans <name> takes <params> does'", "function")
+            throw_error("Fam what are you yappin about this the lingo: 'mans <name> takes <params> does'", "function")
 
         func_name = tokens[1]
 
@@ -40,18 +39,18 @@ def handle_function_call(tokens):
     """Handle function call: 'ahlie <func_name> <args>'"""
     try:
         if len(tokens) < 2:
-            throw_error("Function call missing name", "function")
+            throw_error("Function dem missin them name", "function")
 
         func_name = tokens[1]
         args = tokens[2:] if len(tokens) > 2 else []
 
         if func_name not in functions:
-            throw_error(f"Function '{func_name}' not found", "function")
+            throw_error(f"Where the function '{func_name}'...Where the function", "function")
 
         func_def = functions[func_name]
 
         if len(args) != len(func_def['params']):
-            throw_error(f"Function '{func_name}' expects {len(func_def['params'])} args, got {len(args)}", "function")
+            throw_error(f"Function '{func_name}' t-dot {len(func_def['params'])} fly, told {len(args)}", "function")
 
         saved_vars = variables.copy()
 
@@ -88,4 +87,4 @@ def handle_function_call(tokens):
     except Exception as e:
         if isinstance(e, VarLangError):
             raise
-        throw_error(f"Function call failed: {e}", "function") 
+        throw_error(f"Bro was not invited to the function: {e}", "function") 
