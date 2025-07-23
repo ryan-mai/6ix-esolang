@@ -33,5 +33,9 @@ def run_code():
         sys.stdout = old_stdout
         return jsonify({'success': False, 'error': str(e)})
 
+<<<<<<< HEAD
+=======
+# For Vercel deployment
+>>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)

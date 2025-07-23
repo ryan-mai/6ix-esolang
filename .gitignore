@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -27,3 +28,44 @@ my-website/.docusaurus/
 
 my-website/6ix-esolang/
 **/.git/
+=======
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+>>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
