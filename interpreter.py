@@ -723,5 +723,4 @@ safe
 """
 
 if __name__ == "__main__":
-    print("=== VarLang Error Handling Demo ===")
     run_varlang(test_error_handling)
