@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-# VarLang Interpreter
-
-A modular Python interpreter for the VarLang programming language with authentic slang syntax.
-=======
 # 6ix Esolang Interpreter
 
 [Official Documentation](https://ryan-mai.github.io/6ix-esolang/)
 [Official Interpreter](https://6ix-esolang-b286n01te-ryan-mais-projects.vercel.app/)
 
-A modular Python interpreter for the 6ix Esolang based in Toronto.
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
 
 ## Project Structure
 
@@ -35,7 +28,6 @@ python main.py
 ```
 
 ### File Mode
-<<<<<<< HEAD
 Run a VarLang file:
 ```bash
 python main.py your_file.vl
@@ -43,7 +35,7 @@ python main.py your_file.vl
 Run a 6ix Esolang file:
 ```bash
 python main.py your_file.six
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
+
 ```
 
 ## Module Descriptions
@@ -78,11 +70,8 @@ python main.py your_file.six
 - Error handlers storage
 
 ### handlers.py
-<<<<<<< HEAD
-- Command handlers for all VarLang operations:
-=======
 - Command handlers for all 6ix Esolang operations:
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
+
   - Variable assignment (`croski`)
   - Print statements (`allow it`)
   - Comparisons (`real sh`)
@@ -99,12 +88,9 @@ python main.py your_file.six
 - Value parsing functions
 - Expression evaluation
 - String interpolation support
+- 
 
-<<<<<<< HEAD
-## VarLang Syntax Examples
-=======
 ## 6ix Esolang Syntax Examples
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
 
 ```varlang
 # Variable assignment
@@ -156,32 +142,22 @@ waste math "Division by zero"
 ```
 
 ## Error Handling
-
-The interpreter provides comprehensive error handling with custom error types:
-<<<<<<< HEAD
-- `math`: Math operation errors
-- `variable`: Variable-related errors  
-- `function`: Function-related errors
-- `generic`: General errors
-=======
 - `math`: Math operation errors 👨‍🔬
 - `variable`: Variable-related errors ❓
 - `function`: Function-related errors 🎊
 - `generic`: General errors 🧬
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
 
 ## Slang Syntax Reference
 
 ### Variables
-<<<<<<< HEAD
-- `croski var_name fax value` - Basic assignment
-- `croski var_name money up value` - Add to existing variable
-- `croski var_name funny up value` - Subtract from existing variable
-- `croski var_name cheesed value` - Multiply with existing variable
-- `croski var_name mandem value` - Divide existing variable
-- `croski var_name steeze value` - Modulo with existing variable
-- `croski var_name dun value` - Power with existing variable
-- `croski var_name bucktee value` - Floor division with existing variable
+- `croski var_name fax value` - Basic assignment (`=`)
+- `croski var_name money up value` - Add to existing variable (`+=`)
+- `croski var_name funny up value` - Subtract from existing variable (`-=`)
+- `croski var_name cheesed value` - Multiply with existing variable (`*=`)
+- `croski var_name mandem value` - Divide existing variable (`/=`)
+- `croski var_name steeze value` - Modulo with existing variable (`%=`)
+- `croski var_name dun value` - Power with existing variable (`**=`)
+- `croski var_name bucktee value` - Floor division with existing variable (`//=`)
 
 ### Math Operations
 - `addy` - Addition
@@ -199,15 +175,6 @@ The interpreter provides comprehensive error handling with custom error types:
 - `reach` - Less than or equal to
 - `bussin` - Greater than
 - `lick` - Greater than or equal to
-=======
-- `croski var_name fax value` - Basic assignment (`=`)
-- `croski var_name money up value` - Add to existing variable (`+=`)
-- `croski var_name funny up value` - Subtract from existing variable (`-=`)
-- `croski var_name cheesed value` - Multiply with existing variable (`*=`)
-- `croski var_name mandem value` - Divide existing variable (`/=`)
-- `croski var_name steeze value` - Modulo with existing variable (`%=`)
-- `croski var_name dun value` - Power with existing variable (`**=`)
-- `croski var_name bucktee value` - Floor division with existing variable (`//=`)
 
 ### Math Operations
 - `addy` - Addition (`+`)
@@ -225,7 +192,6 @@ The interpreter provides comprehensive error handling with custom error types:
 - `reach` - Less than or equal to (`>=`)
 - `bussin` - Greater than (`<`)
 - `lick` - Greater than or equal to (`<=`)
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
 
 ### Logical Operations
 - `based` - AND
@@ -239,8 +205,4 @@ The interpreter provides comprehensive error handling with custom error types:
 
 ### Control Flow
 - `trust ... nah ... safe` - Try-catch blocks
-<<<<<<< HEAD
 - `waste message` - Throw errors 
-=======
-- `waste message` - Throw errors 
->>>>>>> e1c1f4a89b85d9d4f7630d921559f2eb950a1181
